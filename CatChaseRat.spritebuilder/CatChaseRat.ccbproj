@@ -63,7 +63,7 @@
 	<key>publishToZipFile</key>
 	<false/>
 	<key>resourceAutoScaleFactor</key>
-	<integer>4</integer>
+	<integer>2</integer>
 	<key>resourcePaths</key>
 	<array>
 		<dict>
@@ -76,6 +76,30 @@
 		<key></key>
 		<dict>
 			<key>previewFolderHidden</key>
+			<true/>
+		</dict>
+		<key>CatChaseRatAssets</key>
+		<dict/>
+		<key>CatChaseRatAssets/background</key>
+		<dict>
+			<key>isSmartSpriteSheet</key>
+			<true/>
+		</dict>
+		<key>CatChaseRatAssets/background/Halloween-BK@4x.png</key>
+		<dict/>
+		<key>CatChaseRatAssets/buttons</key>
+		<dict>
+			<key>isSmartSpriteSheet</key>
+			<true/>
+		</dict>
+		<key>CatChaseRatAssets/characters</key>
+		<dict>
+			<key>isSmartSpriteSheet</key>
+			<true/>
+		</dict>
+		<key>CatChaseRatAssets/obstacles</key>
+		<dict>
+			<key>isSmartSpriteSheet</key>
 			<true/>
 		</dict>
 		<key>Sprites</key>
