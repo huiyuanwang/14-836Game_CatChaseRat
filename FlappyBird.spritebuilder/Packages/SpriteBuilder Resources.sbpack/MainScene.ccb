@@ -790,7 +790,7 @@
 								<string>ScaleLock</string>
 								<key>value</key>
 								<array>
-									<real>1.3500000238418579</real>
+									<real>1.5</real>
 									<real>1</real>
 									<false/>
 									<integer>0</integer>
@@ -938,7 +938,7 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>623.70001220703125</real>
+									<real>693</real>
 									<real>7</real>
 									<integer>0</integer>
 									<integer>0</integer>
@@ -963,7 +963,7 @@
 								<string>ScaleLock</string>
 								<key>value</key>
 								<array>
-									<real>1.3500000238418579</real>
+									<real>1.5</real>
 									<real>1</real>
 									<false/>
 									<integer>0</integer>
