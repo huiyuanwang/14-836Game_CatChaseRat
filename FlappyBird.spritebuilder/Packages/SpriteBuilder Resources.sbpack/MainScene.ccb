@@ -478,7 +478,7 @@
 						<key>value</key>
 						<array>
 							<real>0.0</real>
-							<real>98</real>
+							<real>77</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -586,7 +586,7 @@
 						<key>value</key>
 						<array>
 							<real>320</real>
-							<real>98</real>
+							<real>77</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -766,7 +766,7 @@
 								<key>value</key>
 								<array>
 									<real>0.0</real>
-									<real>25</real>
+									<real>7</real>
 									<integer>0</integer>
 									<integer>0</integer>
 									<integer>0</integer>
@@ -939,7 +939,7 @@
 								<key>value</key>
 								<array>
 									<real>462</real>
-									<real>25</real>
+									<real>7</real>
 									<integer>0</integer>
 									<integer>0</integer>
 									<integer>0</integer>
