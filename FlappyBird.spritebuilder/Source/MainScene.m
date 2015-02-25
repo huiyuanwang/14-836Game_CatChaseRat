@@ -123,7 +123,7 @@
         _restartButton.visible = TRUE;
         
         character.physicsBody.velocity = ccp(0.0f, character.physicsBody.velocity.y);
-        character.rotation = 90.f;
+        //character.rotation = 90.f;
         character.physicsBody.allowsRotation = FALSE;
         [character stopAllActions];
         
