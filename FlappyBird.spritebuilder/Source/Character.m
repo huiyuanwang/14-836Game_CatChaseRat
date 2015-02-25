@@ -13,7 +13,8 @@
 
 - (void)didLoadFromCCB
 {
-    self.position = ccp(145, 100);
+    self.positionType = CCPositionTypeNormalized;
+    self.position = ccp(0.5, 0.25);
     self.zOrder = DrawingOrderHero;
     self.physicsBody.collisionType = @"character";
 }
