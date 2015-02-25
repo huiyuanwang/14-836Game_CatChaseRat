@@ -119,7 +119,7 @@
 
 - (void)gameOver {
     if (!_gameOver) {
-        _gameOver = TRUE;
+        //_gameOver = TRUE;
         _restartButton.visible = TRUE;
         
         character.physicsBody.velocity = ccp(0.0f, character.physicsBody.velocity.y);
