@@ -97,7 +97,7 @@
 
 - (void)gameOver {
     if (!_gameOver) {
-        //_gameOver = TRUE;
+        _gameOver = TRUE;
         _restartButton.visible = TRUE;
         
         character.physicsBody.velocity = ccp(0.0f, character.physicsBody.velocity.y);
@@ -194,7 +194,6 @@
         [_obstacles removeObject:obstacleToRemove];
     }
     
-    /*
     if (!_gameOver)
     {
         @try
@@ -207,11 +206,12 @@
         {
             
         }
-    }*/
+    }
 }
 
 -(BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair*)pair character:(CCSprite*)character level:(CCNode*)level {
-    [self gameOver];
+    //[self gameOver];
+    [self oneJump];
     return TRUE;
 }
 
