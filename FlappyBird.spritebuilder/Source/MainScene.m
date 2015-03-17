@@ -40,6 +40,7 @@
     CCButton *_restartButton;
     
     BOOL _gameOver;
+    BOOL _oneJump;
     CCLabelTTF *_scoreLabel;
     CCLabelTTF *_nameLabel;
     
@@ -79,7 +80,11 @@
         
         @try
         {
-            [super touchBegan:touch withEvent:event];
+            if (_oneJump)
+            {
+                [super touchBegan:touch withEvent:event];
+                _oneJump = FALSE;
+            }
         }
         @catch(NSException* ex)
         {
@@ -110,7 +115,7 @@
 }
 
 - (void)oneJump {
-    
+    _oneJump = TRUE;
 }
 
 - (void)restart {
@@ -189,6 +194,7 @@
         [_obstacles removeObject:obstacleToRemove];
     }
     
+    /*
     if (!_gameOver)
     {
         @try
@@ -201,7 +207,7 @@
         {
             
         }
-    }
+    }*/
 }
 
 -(BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair*)pair character:(CCSprite*)character level:(CCNode*)level {
