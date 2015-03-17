@@ -109,6 +109,10 @@
     }
 }
 
+- (void)oneJump {
+    
+}
+
 - (void)restart {
     CCScene *scene = [CCBReader loadAsScene:@"MainScene"];
     [[CCDirector sharedDirector] replaceScene:scene];
