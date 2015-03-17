@@ -165,7 +165,7 @@
         }
     }
     
-    _parallaxBackground.position = ccp(_parallaxBackground.position.x - (character.physicsBody.velocity.x * delta), _parallaxBackground.position.y);
+    //_parallaxBackground.position = ccp(_parallaxBackground.position.x - (character.physicsBody.velocity.x * delta), _parallaxBackground.position.y);
     
     NSMutableArray *offScreenObstacles = nil;
     
