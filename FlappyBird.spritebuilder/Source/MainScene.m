@@ -145,7 +145,7 @@
 
 - (void)addObstacle {
     Obstacle *obstacle = (Obstacle *)[CCBReader load:@"Obstacle"];
-    CGPoint screenPosition = [self convertToWorldSpace:ccp(580, 0)];
+    CGPoint screenPosition = [self convertToWorldSpace:ccp(550, 0)];
     CGPoint worldPosition = [physicsNode convertToNodeSpace:screenPosition];
     obstacle.position = worldPosition;
     [obstacle setupRandomPosition];
@@ -159,7 +159,7 @@
 - (void)showScore
 {
     _scoreLabel.string = [NSString stringWithFormat:@"%d", points];
-    _scoreLabel.visible = true;
+    _scoreLabel.visible = FALSE;
 }
 
 - (void)update:(CCTime)delta
@@ -206,7 +206,7 @@
         if (bushScreenPosition.x <= (-1 * bush.contentSize.width)) {
             for (CGPointObject *child in _parallaxBackground.parallaxArray) {
                 if (child.child == bush) {
-                    child.offset = ccp(child.offset.x + 2*bush.contentSize.width, child.offset.y);
+                    child.offset = ccp(child.offset.x + 2 * bush.contentSize.width, child.offset.y);
                 }
             }
         }

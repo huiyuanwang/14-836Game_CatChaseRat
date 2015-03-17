@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>14</integer>
+	<integer>15</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -682,8 +682,8 @@
 								<string>ScaleLock</string>
 								<key>value</key>
 								<array>
-									<real>1</real>
-									<real>1</real>
+									<real>1.2288923263549805</real>
+									<real>1.0264589786529541</real>
 									<false/>
 									<integer>0</integer>
 								</array>
@@ -735,7 +735,7 @@
 					</dict>
 					<dict>
 						<key>UUID</key>
-						<integer>8</integer>
+						<integer>14</integer>
 						<key>baseClass</key>
 						<string>CCSprite</string>
 						<key>children</key>
@@ -745,7 +745,7 @@
 						<key>displayName</key>
 						<string>ground</string>
 						<key>memberVarAssignmentName</key>
-						<string>_ground2</string>
+						<string>_ground1</string>
 						<key>memberVarAssignmentType</key>
 						<integer>1</integer>
 						<key>physicsBody</key>
@@ -830,8 +830,8 @@
 								<string>Position</string>
 								<key>value</key>
 								<array>
-									<real>462</real>
-									<real>7</real>
+									<real>568</real>
+									<real>6.9999980926513672</real>
 									<integer>0</integer>
 									<integer>0</integer>
 									<integer>0</integer>
@@ -855,8 +855,8 @@
 								<string>ScaleLock</string>
 								<key>value</key>
 								<array>
-									<real>1</real>
-									<real>1</real>
+									<real>1.2288923263549805</real>
+									<real>1.0264589786529541</real>
 									<false/>
 									<integer>0</integer>
 								</array>
@@ -905,6 +905,8 @@
 								<array/>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 					</dict>
 				</array>
 				<key>customClass</key>
@@ -1330,8 +1332,6 @@
 						</array>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
