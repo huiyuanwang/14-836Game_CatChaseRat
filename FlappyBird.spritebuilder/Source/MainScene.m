@@ -145,7 +145,7 @@
 
 - (void)addObstacle {
     Obstacle *obstacle = (Obstacle *)[CCBReader load:@"Obstacle"];
-    CGPoint screenPosition = [self convertToWorldSpace:ccp(380, 0)];
+    CGPoint screenPosition = [self convertToWorldSpace:ccp(580, 0)];
     CGPoint worldPosition = [physicsNode convertToNodeSpace:screenPosition];
     obstacle.position = worldPosition;
     [obstacle setupRandomPosition];
