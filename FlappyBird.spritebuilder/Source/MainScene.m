@@ -24,7 +24,7 @@
 
 @implementation MainScene {
     CGPoint _cloudParallaxRatio;
-    CGPoint _bushParallaxRatio;
+    //CGPoint _bushParallaxRatio;
     
     CCNode *_parallaxContainer;
     CCParallaxNode *_parallaxBackground;
@@ -37,9 +37,9 @@
     CCNode *_cloud2;
     NSArray *_clouds;
     
-    CCNode *_bush1;
-    CCNode *_bush2;
-    NSArray *_bushes;
+    //CCNode *_bush1;
+    //CCNode *_bush2;
+    //NSArray *_bushes;
     
     NSTimeInterval _sinceTouch;
     
@@ -60,7 +60,7 @@
     
     _grounds = @[_ground1, _ground2];
     _clouds = @[_cloud1, _cloud2];
-    _bushes = @[_bush1, _bush2];
+    //_bushes = @[_bush1, _bush2];
     
     _parallaxBackground = [CCParallaxNode node];
     [_parallaxContainer addChild:_parallaxBackground];
@@ -69,11 +69,12 @@
     _bushParallaxRatio = ccp(0.9, 1);
     _cloudParallaxRatio = ccp(0.5, 1);
     
+    /*
     for (CCNode *bush in _bushes) {
         CGPoint offset = bush.position;
         [self removeChild:bush];
         [_parallaxBackground addChild:bush z:0 parallaxRatio:_bushParallaxRatio positionOffset:offset];
-    }
+    }*/
     
     for (CCNode *cloud in _clouds) {
         CGPoint offset = cloud.position;
@@ -193,7 +194,7 @@
     }
     
     _parallaxBackground.position = ccp(_parallaxBackground.position.x - (character.physicsBody.velocity.x * delta), _parallaxBackground.position.y);
-    
+    /*
     // loop the bushes
     for (CCNode *bush in _bushes) {
         // get the world position of the bush
@@ -210,7 +211,7 @@
                 }
             }
         }
-    }
+    }*/
     
     // loop the clouds
     for (CCNode *cloud in _clouds) {
