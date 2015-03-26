@@ -75,7 +75,7 @@
 
 - (void)touchBegan:(CCTouch *)touch withEvent:(CCTouchEvent *)event {
     if (!_gameOver) {
-        [character.physicsBody applyAngularImpulse:400.f];
+        [character.physicsBody applyAngularImpulse:10000.f];
         _sinceTouch = 0.f;
         
         @try
@@ -199,7 +199,7 @@
     {
         @try
         {
-            character.physicsBody.velocity = ccp(80.f, clampf(character.physicsBody.velocity.y, -MAXFLOAT, 200.f));
+            character.physicsBody.velocity = ccp(0, clampf(character.physicsBody.velocity.y, -MAXFLOAT, 200.f));
             
             [super update:delta];
         }
