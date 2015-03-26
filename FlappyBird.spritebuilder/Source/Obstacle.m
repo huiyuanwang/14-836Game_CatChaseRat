@@ -16,9 +16,10 @@
 #define ARC4RANDOM_MAX      0x100000000
 
 // visibility on a 3,5-inch iPhone ends a 88 points and we want some meat
-static const CGFloat minimumYPosition = 100.f;
+static const CGFloat YPosition = 100.f;
 // visibility ends at 480 and we want some meat
-static const CGFloat maximumYPosition = 380.f;
+static const CGFloat maximumXPosition = 450.f;
+static const CGFloat minimumXPosition = 660.f;
 
 - (void)didLoadFromCCB {
   _topPipe.physicsBody.collisionType = @"level";
@@ -31,9 +32,9 @@ static const CGFloat maximumYPosition = 380.f;
 - (void)setupRandomPosition {
   // value between 0.f and 1.f
   CGFloat random = ((double)arc4random() / ARC4RANDOM_MAX);
-  CGFloat range = maximumYPosition - minimumYPosition;
+  CGFloat range = maximumXPosition - minimumXPosition;
   //self.position = ccp(self.position.x, minimumYPosition + (random * range));
-    self.position = ccp(self.position.x + (random * range), minimumYPosition);
+    self.position = ccp(self.position.x + (random * range), YPosition);
 }
 
 @end
