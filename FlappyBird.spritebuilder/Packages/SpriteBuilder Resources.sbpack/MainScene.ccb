@@ -550,7 +550,7 @@
 								<key>value</key>
 								<array>
 									<real>568</real>
-									<real>6.9999980926513672</real>
+									<real>6.999995231628418</real>
 									<integer>0</integer>
 									<integer>0</integer>
 									<integer>0</integer>
@@ -624,6 +624,8 @@
 								<array/>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 					</dict>
 					<dict>
 						<key>UUID</key>
@@ -797,8 +799,6 @@
 								<array/>
 							</dict>
 						</array>
-						<key>selected</key>
-						<true/>
 					</dict>
 				</array>
 				<key>customClass</key>
@@ -1591,7 +1591,7 @@
 		</dict>
 	</array>
 	<key>stageBorder</key>
-	<integer>0</integer>
+	<integer>3</integer>
 	<key>stageColor</key>
 	<integer>0</integer>
 </dict>
