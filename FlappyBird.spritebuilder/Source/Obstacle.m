@@ -18,8 +18,7 @@
 // visibility on a 3,5-inch iPhone ends a 88 points and we want some meat
 static const CGFloat YPosition = 100.f;
 // visibility ends at 480 and we want some meat
-static const CGFloat minimumXPosition = 450.f;
-static const CGFloat maximumXPosition = 660.f;
+static const CGFloat XPositionrange = 450.f;
 
 - (void)didLoadFromCCB {
   _topPipe.physicsBody.collisionType = @"level";
@@ -32,9 +31,9 @@ static const CGFloat maximumXPosition = 660.f;
 - (void)setupRandomPosition {
   // value between 0.f and 1.f
   CGFloat random = ((double)arc4random() / ARC4RANDOM_MAX);
-  CGFloat range = maximumXPosition - minimumXPosition;
+  //CGFloat range = maximumXPosition - minimumXPosition;
   //self.position = ccp(self.position.x, minimumYPosition + (random * range));
-  self.position = ccp(minimumXPosition + (random * range), YPosition);
+  self.position = ccp(self.position.x + (random * XPositionrange), YPosition);
 }
 
 @end
