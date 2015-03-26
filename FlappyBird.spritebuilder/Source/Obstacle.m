@@ -18,8 +18,8 @@
 // visibility on a 3,5-inch iPhone ends a 88 points and we want some meat
 static const CGFloat YPosition = 100.f;
 // visibility ends at 480 and we want some meat
-static const CGFloat minimumXPosition = 4500.f;
-static const CGFloat maximumXPosition = 6600.f;
+static const CGFloat minimumXPosition = 1500.f;
+static const CGFloat maximumXPosition = 2000.f;
 
 - (void)didLoadFromCCB {
   _topPipe.physicsBody.collisionType = @"level";
