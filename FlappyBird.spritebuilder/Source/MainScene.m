@@ -75,7 +75,7 @@
 
 - (void)touchBegan:(CCTouch *)touch withEvent:(CCTouchEvent *)event {
     if (!_gameOver) {
-        [character.physicsBody applyAngularImpulse:10000.f];
+        [character.physicsBody applyAngularImpulse:400.f];
         _sinceTouch = 0.f;
         
         @try
