@@ -8,6 +8,7 @@
 
 #import "CCNode.h"
 #import "Bird.h"
+#import "Dog.h"
 
 typedef NS_ENUM(NSInteger, DrawingOrder) {
     DrawingOrderPipes,
@@ -18,6 +19,7 @@ typedef NS_ENUM(NSInteger, DrawingOrder) {
 @interface GamePlayScene : CCNode <CCPhysicsCollisionDelegate>
 {
     Bird *_bird;
+    Dog *_dog;
     CCPhysicsNode *_physicsNode;
     float timeSinceGrass;
 }

@@ -6,8 +6,10 @@
 //  Copyright (c) 2015 Apportable. All rights reserved.
 //
 
-#ifndef CatChaseRat_Dog_h
-#define CatChaseRat_Dog_h
+#import "CCNode.h"
 
+@interface Dog : CCSprite
 
-#endif
+-(void) crouch;
+
+@end

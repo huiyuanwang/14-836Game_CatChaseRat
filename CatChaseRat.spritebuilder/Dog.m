@@ -6,4 +6,21 @@
 //  Copyright (c) 2015 Apportable. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "Dog.h"
+#import "GamePlayScene.h"
+
+@implementation Dog
+
+- (void)didLoadFromCCB
+{
+    self.position = ccp(175, 150);
+    self.zOrder = DrawingOrderCharacter;
+    self.physicsBody.collisionType = @"dog";
+}
+
+- (void)crouch
+{
+    [self.physicsBody applyImpulse:ccp(0, 300.f)];
+}
+
+@end

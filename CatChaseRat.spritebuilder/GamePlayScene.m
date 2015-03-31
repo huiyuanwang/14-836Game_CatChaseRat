@@ -19,6 +19,11 @@
     [_physicsNode addChild:_bird];
     CCLOG(@"Bird is loaded successfully.");
     
+    // Add the dog to make it move with the screen
+    _dog = (Dog *)[CCBReader load:@"Dog"];
+    [_physicsNode addChild:_dog];
+    CCLOG(@"Dog is loaded successfully.");
+    
     // Add grass obstable for bird character
     CCLOG(@"Grass obstacle is ready to load in initialize.");
     [self addGrassObstacle];

@@ -74,7 +74,7 @@ static const CGFloat scrollSpeed = 80.f;
 - (void)gameOver {
     if (!_gameOver) {
         CCLOG(@"The game is over. Because the bird is crashed.");
-        _gameOver = TRUE;
+        //_gameOver = TRUE;
     }
 }
 
@@ -84,6 +84,7 @@ static const CGFloat scrollSpeed = 80.f;
 
 - (void)update:(CCTime)delta {
     _bird.position = ccp(_bird.position.x + delta * scrollSpeed, _bird.position.y);
+    _dog.position = ccp(_dog.position.x + delta * scrollSpeed, _dog.position.y);
     _physicsNode.position = ccp(_physicsNode.position.x - delta * scrollSpeed, _physicsNode.position.y);
     
     // loop the group
