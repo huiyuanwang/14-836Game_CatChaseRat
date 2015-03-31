@@ -6,8 +6,10 @@
 //  Copyright (c) 2015 Apportable. All rights reserved.
 //
 
-#ifndef CatChaseRat_Bird_h
-#define CatChaseRat_Bird_h
+#import "CCNode.h"
 
+@interface Bird : CCSprite
 
-#endif
+-(void) jump;
+
+@end

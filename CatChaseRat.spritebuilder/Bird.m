@@ -6,4 +6,21 @@
 //  Copyright (c) 2015 Apportable. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "Bird.h"
+#import "GamePlayScene.h"
+
+@implementation Bird
+
+- (void)didLoadFromCCB
+{
+    self.position = ccp(375, 150);
+    self.zOrder = DrawingOrderCharacter;
+    self.physicsBody.collisionType = @"bird";
+}
+
+- (void)jump
+{
+    [self.physicsBody applyImpulse:ccp(0, 300.f)];
+}
+
+@end

@@ -6,8 +6,24 @@
 //  Copyright (c) 2015 Apportable. All rights reserved.
 //
 
-#ifndef CatChaseRat_GamePlayScene_h
-#define CatChaseRat_GamePlayScene_h
+#import "CCNode.h"
+#import "Bird.h"
 
+typedef NS_ENUM(NSInteger, DrawingOrder) {
+    DrawingOrderPipes,
+    DrawingOrderGround,
+    DrawingOrderCharacter
+};
 
-#endif
+@interface GamePlayScene : CCNode <CCPhysicsCollisionDelegate>
+{
+    Bird *_bird;
+    CCPhysicsNode *_physicsNode;
+    float timeSinceGrass;
+}
+
+-(void) initialize;
+-(void) addGrassObstacle;
+
+@end
+
