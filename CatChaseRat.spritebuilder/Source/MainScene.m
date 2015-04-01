@@ -75,16 +75,16 @@ static const CGFloat scrollSpeed = 80.f;
 }
 
 - (void)addPipeObstacle {
-    CCLOG(@"Pipe obstacle is ready to load in addGrassObstacle.");
+    CCLOG(@"Pipe obstacle is ready to load in addPipeObstacle.");
     Pipe *_pipeObstacle = (Pipe *)[CCBReader load:@"Pipe"];
     CCLOG(@"Pipe obstacle is loaded.");
-    CGPoint screenPosition = [self convertToWorldSpace:ccp(380, 0)];
+    CGPoint screenPosition = [self convertToWorldSpace:ccp(290, 0)];
     CGPoint worldPosition = [_physicsNode convertToNodeSpace:screenPosition];
     _pipeObstacle.position = worldPosition;
     [_pipeObstacle setupRandomPosition];
     _pipeObstacle.zOrder = DrawingOrderPipes;
     [_physicsNode addChild:_pipeObstacle];
-    [_grassObstacles addObject:_pipeObstacle];
+    [_pipeObstacles addObject:_pipeObstacle];
 }
 
 - (void)gameOver {
@@ -131,6 +131,22 @@ static const CGFloat scrollSpeed = 80.f;
     for (CCNode *obstacleToRemove in offScreenObstacles) {
         [obstacleToRemove removeFromParent];
         [_grassObstacles removeObject:obstacleToRemove];
+    }
+    
+    for (CCNode *obstacle in _pipeObstacles) {
+        CGPoint obstacleWorldPosition = [_physicsNode convertToWorldSpace:obstacle.position];
+        CGPoint obstacleScreenPosition = [self convertToNodeSpace:obstacleWorldPosition];
+        if (obstacleScreenPosition.x < -obstacle.contentSize.width) {
+            if (!offScreenObstacles) {
+                offScreenObstacles = [NSMutableArray array];
+            }
+            [offScreenObstacles addObject:obstacle];
+        }
+    }
+    
+    for (CCNode *obstacleToRemove in offScreenObstacles) {
+        [obstacleToRemove removeFromParent];
+        [_pipeObstacles removeObject:obstacleToRemove];
     }
     
     if (!_gameOver) {

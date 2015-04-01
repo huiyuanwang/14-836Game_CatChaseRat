@@ -7,8 +7,6 @@
 //
 
 #import "GamePlayScene.h"
-#import "Bird.h"
-#import "Grass.h"
 
 @implementation GamePlayScene
 
@@ -29,11 +27,18 @@
     [self addGrassObstacle];
     // Set the timer to catch when to add a new grass obstable
     timeSinceGrass = 0.0f;
+    
+    // Add grass obstable for bird character
+    CCLOG(@"Pipe obstacle is ready to load in initialize.");
+    [self addPipeObstacle];
+    // Set the timer to catch when to add a new grass obstable
+    timeSincePipe = 0.0f;
 }
 
 - (void)update:(CCTime)delta {
     // Increment the time since the last obstacle was added
     timeSinceGrass += delta; // delta is approximately 1/60th of a second
+    timeSincePipe += delta;
     
     // Check to see if two seconds have passed
     if (timeSinceGrass > 5.0f)
@@ -42,6 +47,11 @@
         [self addGrassObstacle];
         // Then reset the timer.
         timeSinceGrass = 0.0f;
+    }
+    if (timeSincePipe > 6.0f)
+    {
+        [self addPipeObstacle];
+        timeSincePipe = 0.0f;
     }
 }
 

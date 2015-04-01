@@ -13,8 +13,8 @@
 }
 
 #define ARC4RANDOM_MAX      0x100000000
-// The y position to add the grass obstacle is static
-static const CGFloat YPosition = 100.f;
+// The y position to add the pipe obstacle is static
+static const CGFloat YPosition = 10.f;
 // We want the x position to be set in a random range
 static const CGFloat miniXPosition = 50.f;
 static const CGFloat maxiXPosition = 150.f;

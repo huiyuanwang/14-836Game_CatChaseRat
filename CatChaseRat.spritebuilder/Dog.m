@@ -13,7 +13,7 @@
 
 - (void)didLoadFromCCB
 {
-    self.position = ccp(175, 150);
+    self.position = ccp(175, 100);
     self.zOrder = DrawingOrderCharacter;
     self.physicsBody.collisionType = @"dog";
 }

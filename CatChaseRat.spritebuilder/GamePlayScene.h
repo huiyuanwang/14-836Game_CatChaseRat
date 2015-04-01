@@ -22,10 +22,12 @@ typedef NS_ENUM(NSInteger, DrawingOrder) {
     Dog *_dog;
     CCPhysicsNode *_physicsNode;
     float timeSinceGrass;
+    float timeSincePipe;
 }
 
 -(void) initialize;
 -(void) addGrassObstacle;
+-(void) addPipeObstacle;
 
 @end
 

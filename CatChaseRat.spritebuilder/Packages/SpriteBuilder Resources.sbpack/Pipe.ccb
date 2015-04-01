@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>3</integer>
+	<integer>4</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -151,7 +151,7 @@
 					<key>density</key>
 					<real>1</real>
 					<key>dynamic</key>
-					<true/>
+					<false/>
 					<key>elasticity</key>
 					<real>0.30000001192092896</real>
 					<key>friction</key>
@@ -159,12 +159,8 @@
 					<key>points</key>
 					<array>
 						<array>
-							<real>26.054718017578125</real>
-							<real>-0.8984375</real>
-						</array>
-						<array>
-							<real>-0.949188232421875</real>
-							<real>10.78515625</real>
+							<real>0.0</real>
+							<real>0.0</real>
 						</array>
 						<array>
 							<real>0.0</real>
@@ -175,16 +171,16 @@
 							<real>336</real>
 						</array>
 						<array>
-							<real>52.753936767578125</real>
-							<real>9.7851638793945312</real>
+							<real>53</real>
+							<real>0.0</real>
 						</array>
 					</array>
 					<key>polygons</key>
 					<array>
 						<array>
 							<array>
-								<real>52.753936767578125</real>
-								<real>9.7851638793945312</real>
+								<real>53</real>
+								<real>0.0</real>
 							</array>
 							<array>
 								<real>53</real>
@@ -195,12 +191,8 @@
 								<real>336</real>
 							</array>
 							<array>
-								<real>-0.949188232421875</real>
-								<real>10.78515625</real>
-							</array>
-							<array>
-								<real>26.054718017578125</real>
-								<real>-0.8984375</real>
+								<real>0.0</real>
+								<real>0.0</real>
 							</array>
 						</array>
 					</array>
@@ -223,7 +215,7 @@
 						<key>value</key>
 						<array>
 							<real>0.5</real>
-							<real>158</real>
+							<real>218</real>
 							<integer>1</integer>
 							<integer>2</integer>
 							<integer>0</integer>
@@ -302,7 +294,7 @@
 			</dict>
 		</array>
 		<key>customClass</key>
-		<string></string>
+		<string>Pipe</string>
 		<key>displayName</key>
 		<string>CCNode</string>
 		<key>memberVarAssignmentName</key>

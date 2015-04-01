@@ -13,7 +13,7 @@
 
 - (void)didLoadFromCCB
 {
-    self.position = ccp(375, 150);
+    self.position = ccp(375, 100);
     self.zOrder = DrawingOrderCharacter;
     self.physicsBody.collisionType = @"bird";
 }
