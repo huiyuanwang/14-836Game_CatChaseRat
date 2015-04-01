@@ -7,6 +7,7 @@
 
 #import "MainScene.h"
 #import "Grass.h"
+#import "Pipe.h"
 
 static const CGFloat scrollSpeed = 80.f;
 
@@ -19,6 +20,7 @@ static const CGFloat scrollSpeed = 80.f;
     NSTimeInterval _sinceTouch;
     
     NSMutableArray *_grassObstacles;
+    NSMutableArray *_pipeObstacles;
     
     BOOL _gameOver;
     BOOL _oneJump;
@@ -38,6 +40,7 @@ static const CGFloat scrollSpeed = 80.f;
     _physicsNode.collisionDelegate = self;
     
     _grassObstacles = [NSMutableArray array];
+    _pipeObstacles = [NSMutableArray array];
     
     [super initialize];
 }
@@ -69,6 +72,19 @@ static const CGFloat scrollSpeed = 80.f;
     _grassObstacle.zOrder = DrawingOrderPipes;
     [_physicsNode addChild:_grassObstacle];
     [_grassObstacles addObject:_grassObstacle];
+}
+
+- (void)addPipeObstacle {
+    CCLOG(@"Pipe obstacle is ready to load in addGrassObstacle.");
+    Pipe *_pipeObstacle = (Pipe *)[CCBReader load:@"Pipe"];
+    CCLOG(@"Pipe obstacle is loaded.");
+    CGPoint screenPosition = [self convertToWorldSpace:ccp(380, 0)];
+    CGPoint worldPosition = [_physicsNode convertToNodeSpace:screenPosition];
+    _pipeObstacle.position = worldPosition;
+    [_pipeObstacle setupRandomPosition];
+    _pipeObstacle.zOrder = DrawingOrderPipes;
+    [_physicsNode addChild:_pipeObstacle];
+    [_grassObstacles addObject:_pipeObstacle];
 }
 
 - (void)gameOver {
