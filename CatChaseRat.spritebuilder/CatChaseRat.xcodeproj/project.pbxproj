@@ -65,6 +65,7 @@
 		96495EDE1AC4F21500D3A8A4 /* Bird.m in Sources */ = {isa = PBXBuildFile; fileRef = 96495EDD1AC4F21500D3A8A4 /* Bird.m */; };
 		96495EE11AC4F39200D3A8A4 /* GamePlayScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 96495EE01AC4F39200D3A8A4 /* GamePlayScene.m */; };
 		96495EE51AC6210800D3A8A4 /* Grass.m in Sources */ = {isa = PBXBuildFile; fileRef = 96495EE41AC6210800D3A8A4 /* Grass.m */; };
+		967E1B0E1ADA1918001DD1C6 /* StartScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 967E1B0D1ADA1918001DD1C6 /* StartScene.m */; };
 		96E9D5B11ACB5F5100879976 /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E9D5B01ACB5F5100879976 /* Dog.m */; };
 		B71F5911188484E7003F4D28 /* iPad-old.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5907188484E7003F4D28 /* iPad-old.png */; };
 		B71F5912188484E7003F4D28 /* iPad-old@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5908188484E7003F4D28 /* iPad-old@2x.png */; };
@@ -182,6 +183,8 @@
 		96495EE01AC4F39200D3A8A4 /* GamePlayScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamePlayScene.m; sourceTree = "<group>"; };
 		96495EE31AC620F400D3A8A4 /* Grass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Grass.h; sourceTree = "<group>"; };
 		96495EE41AC6210800D3A8A4 /* Grass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Grass.m; sourceTree = "<group>"; };
+		967E1B0A1ADA18FB001DD1C6 /* StartScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StartScene.h; sourceTree = "<group>"; };
+		967E1B0D1ADA1918001DD1C6 /* StartScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartScene.m; sourceTree = "<group>"; };
 		96E9D5AD1ACB5F4300879976 /* Dog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Dog.h; sourceTree = "<group>"; };
 		96E9D5B01ACB5F5100879976 /* Dog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dog.m; sourceTree = "<group>"; };
 		B71F5907188484E7003F4D28 /* iPad-old.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad-old.png"; path = "Icons/iPad-old.png"; sourceTree = "<group>"; };
@@ -421,6 +424,8 @@
 				96E9D5B01ACB5F5100879976 /* Dog.m */,
 				9637A9B91ACB7CC100F38BED /* Pipe.h */,
 				9637A9BC1ACB7CD300F38BED /* Pipe.m */,
+				967E1B0A1ADA18FB001DD1C6 /* StartScene.h */,
+				967E1B0D1ADA1918001DD1C6 /* StartScene.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -796,6 +801,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96495EE51AC6210800D3A8A4 /* Grass.m in Sources */,
+				967E1B0E1ADA1918001DD1C6 /* StartScene.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 				7A046D8C19E8A20E004C4763 /* MainScene.m in Sources */,
 				96495EE11AC4F39200D3A8A4 /* GamePlayScene.m in Sources */,
