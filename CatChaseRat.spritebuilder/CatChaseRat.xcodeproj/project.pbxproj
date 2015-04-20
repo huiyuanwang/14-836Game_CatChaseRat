@@ -60,6 +60,9 @@
 		927F61B9196C771E000F43EF /* iPhone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F590E188484E7003F4D28 /* iPhone@2x.png */; };
 		927F61BA196C771E000F43EF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B737896D180762440076A88C /* Default.png */; };
 		927F61BB196C771E000F43EF /* iPad-old.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5907188484E7003F4D28 /* iPad-old.png */; };
+		960357961ADF6E8600735232 /* OverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 960357951ADF6E8600735232 /* OverScene.m */; };
+		960357A41ADF772100735232 /* GrassGoal.m in Sources */ = {isa = PBXBuildFile; fileRef = 960357A31ADF772100735232 /* GrassGoal.m */; };
+		960357A71ADF774100735232 /* PipeGoal.m in Sources */ = {isa = PBXBuildFile; fileRef = 960357A61ADF774100735232 /* PipeGoal.m */; };
 		9637A9BD1ACB7CD300F38BED /* Pipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 9637A9BC1ACB7CD300F38BED /* Pipe.m */; };
 		96495ED51AC4B38200D3A8A4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 96495ED41AC4B38200D3A8A4 /* AppDelegate.m */; };
 		96495EDE1AC4F21500D3A8A4 /* Bird.m in Sources */ = {isa = PBXBuildFile; fileRef = 96495EDD1AC4F21500D3A8A4 /* Bird.m */; };
@@ -173,6 +176,12 @@
 		7BF6AF9F1A425F9800FFF9BA /* JavaFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaFoundation.framework; path = "../../../../../../../Library/SBAndroid/Application Support/Developer/Shared/Xcode/Platforms/Android.platform/Developer/SDKs/SBAndroid.sdk/System/Library/Frameworks/JavaFoundation.framework"; sourceTree = "<group>"; };
 		8392007918EE8E3300B6C429 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		927F61BF196C771E000F43EF /* CatChaseRat Android.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CatChaseRat Android.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		960357941ADF6E7300735232 /* OverScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OverScene.h; sourceTree = "<group>"; };
+		960357951ADF6E8600735232 /* OverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverScene.m; sourceTree = "<group>"; };
+		960357A21ADF771400735232 /* GrassGoal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GrassGoal.h; sourceTree = "<group>"; };
+		960357A31ADF772100735232 /* GrassGoal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrassGoal.m; sourceTree = "<group>"; };
+		960357A51ADF773000735232 /* PipeGoal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PipeGoal.h; sourceTree = "<group>"; };
+		960357A61ADF774100735232 /* PipeGoal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PipeGoal.m; sourceTree = "<group>"; };
 		9637A9B91ACB7CC100F38BED /* Pipe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pipe.h; sourceTree = "<group>"; };
 		9637A9BC1ACB7CD300F38BED /* Pipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pipe.m; sourceTree = "<group>"; };
 		96495ED11AC4B35800D3A8A4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Source/AppDelegate.h; sourceTree = "<group>"; };
@@ -407,25 +416,63 @@
 			name = libs;
 			sourceTree = "<group>";
 		};
+		9603579E1ADF768800735232 /* Obstacles */ = {
+			isa = PBXGroup;
+			children = (
+				9637A9B91ACB7CC100F38BED /* Pipe.h */,
+				9637A9BC1ACB7CD300F38BED /* Pipe.m */,
+				96495EE31AC620F400D3A8A4 /* Grass.h */,
+				96495EE41AC6210800D3A8A4 /* Grass.m */,
+			);
+			name = Obstacles;
+			sourceTree = "<group>";
+		};
+		9603579F1ADF76B800735232 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				967E1B0A1ADA18FB001DD1C6 /* StartScene.h */,
+				967E1B0D1ADA1918001DD1C6 /* StartScene.m */,
+				96495EDF1AC4F36F00D3A8A4 /* GamePlayScene.h */,
+				96495EE01AC4F39200D3A8A4 /* GamePlayScene.m */,
+				B7378992180767190076A88C /* MainScene.h */,
+				B7378993180767190076A88C /* MainScene.m */,
+				960357941ADF6E7300735232 /* OverScene.h */,
+				960357951ADF6E8600735232 /* OverScene.m */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
+		960357A01ADF76DE00735232 /* Characters */ = {
+			isa = PBXGroup;
+			children = (
+				96495EDC1AC4F1F800D3A8A4 /* Bird.h */,
+				96495EDD1AC4F21500D3A8A4 /* Bird.m */,
+				96E9D5AD1ACB5F4300879976 /* Dog.h */,
+				96E9D5B01ACB5F5100879976 /* Dog.m */,
+			);
+			name = Characters;
+			sourceTree = "<group>";
+		};
+		960357A11ADF770100735232 /* Goals */ = {
+			isa = PBXGroup;
+			children = (
+				960357A21ADF771400735232 /* GrassGoal.h */,
+				960357A31ADF772100735232 /* GrassGoal.m */,
+				960357A51ADF773000735232 /* PipeGoal.h */,
+				960357A61ADF774100735232 /* PipeGoal.m */,
+			);
+			name = Goals;
+			sourceTree = "<group>";
+		};
 		B737893C1807616C0076A88C /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				B7378992180767190076A88C /* MainScene.h */,
-				B7378993180767190076A88C /* MainScene.m */,
 				96495ED11AC4B35800D3A8A4 /* AppDelegate.h */,
 				96495ED41AC4B38200D3A8A4 /* AppDelegate.m */,
-				96495EDC1AC4F1F800D3A8A4 /* Bird.h */,
-				96495EDD1AC4F21500D3A8A4 /* Bird.m */,
-				96495EDF1AC4F36F00D3A8A4 /* GamePlayScene.h */,
-				96495EE01AC4F39200D3A8A4 /* GamePlayScene.m */,
-				96495EE31AC620F400D3A8A4 /* Grass.h */,
-				96495EE41AC6210800D3A8A4 /* Grass.m */,
-				96E9D5AD1ACB5F4300879976 /* Dog.h */,
-				96E9D5B01ACB5F5100879976 /* Dog.m */,
-				9637A9B91ACB7CC100F38BED /* Pipe.h */,
-				9637A9BC1ACB7CD300F38BED /* Pipe.m */,
-				967E1B0A1ADA18FB001DD1C6 /* StartScene.h */,
-				967E1B0D1ADA1918001DD1C6 /* StartScene.m */,
+				9603579F1ADF76B800735232 /* Scenes */,
+				9603579E1ADF768800735232 /* Obstacles */,
+				960357A01ADF76DE00735232 /* Characters */,
+				960357A11ADF770100735232 /* Goals */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -598,6 +645,7 @@
 						CreatedOnToolsVersion = 6.0.1;
 					};
 					B77F1B2D17B978D7009739AE = {
+						DevelopmentTeam = 9VUC3R8D65;
 						SystemCapabilities = {
 							com.apple.GameCenter = {
 								enabled = 0;
@@ -804,10 +852,13 @@
 				967E1B0E1ADA1918001DD1C6 /* StartScene.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 				7A046D8C19E8A20E004C4763 /* MainScene.m in Sources */,
+				960357A41ADF772100735232 /* GrassGoal.m in Sources */,
 				96495EE11AC4F39200D3A8A4 /* GamePlayScene.m in Sources */,
 				96E9D5B11ACB5F5100879976 /* Dog.m in Sources */,
+				960357961ADF6E8600735232 /* OverScene.m in Sources */,
 				96495EDE1AC4F21500D3A8A4 /* Bird.m in Sources */,
 				96495ED51AC4B38200D3A8A4 /* AppDelegate.m in Sources */,
+				960357A71ADF774100735232 /* PipeGoal.m in Sources */,
 				9637A9BD1ACB7CD300F38BED /* Pipe.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

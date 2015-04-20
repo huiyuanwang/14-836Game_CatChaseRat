@@ -8,7 +8,11 @@
 
 #import "GamePlayScene.h"
 
-@implementation GamePlayScene
+@implementation GamePlayScene {
+    CCNode *_contentNode;
+    CCNode *_birdButton;
+    CCNode *_dogButton;
+}
 
 - (void)initialize
 {
@@ -55,9 +59,19 @@
     }
 }
 
-- (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
-    // this will get called every time the player touches the screen
-    [_bird jump];
+- (void)touchBegan:(CCTouch *)touch withEvent:(UIEvent *)event {
+    // Catch the touch position
+    CGPoint touchLocation = [touch locationInNode:_contentNode];
+    
+    if (CGRectContainsPoint([_birdButton boundingBox], touchLocation)) {
+        // this will be called each time the player touches in the range of bird button
+        [_bird jump];
+    }
+    if (CGRectContainsPoint([_dogButton boundingBox], touchLocation)) {
+        // this will be called each time the player touched in the range of dog button
+        [_dog crouch];
+    }
 }
+
 
 @end

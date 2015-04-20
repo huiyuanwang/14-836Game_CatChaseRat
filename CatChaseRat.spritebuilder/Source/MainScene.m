@@ -10,6 +10,7 @@
 #import "Pipe.h"
 
 static const CGFloat scrollSpeed = 80.f;
+int points;
 
 @implementation MainScene {
     // two grounds to make them continuously loop
@@ -21,6 +22,8 @@ static const CGFloat scrollSpeed = 80.f;
     
     NSMutableArray *_grassObstacles;
     NSMutableArray *_pipeObstacles;
+    
+    CCLabelTTF *_scoreLabel;
     
     BOOL _gameOver;
     BOOL _oneJump;
@@ -41,6 +44,8 @@ static const CGFloat scrollSpeed = 80.f;
     
     _grassObstacles = [NSMutableArray array];
     _pipeObstacles = [NSMutableArray array];
+    points = 0;
+    _scoreLabel.visible = TRUE;
     
     [super initialize];
 }
@@ -91,6 +96,8 @@ static const CGFloat scrollSpeed = 80.f;
     if (!_gameOver) {
         CCLOG(@"The game is over. Because the bird is crashed.");
         //_gameOver = TRUE;
+        CCScene *gameoverScene = [CCBReader loadAsScene:@"OverScene"];
+        [[CCDirector sharedDirector] replaceScene:gameoverScene];
     }
 }
 
@@ -166,6 +173,14 @@ static const CGFloat scrollSpeed = 80.f;
 
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair*)pair bird:(CCSprite*)bird grasslevel:(CCNode*)grasslevel {
     [self gameOver];
+    return TRUE;
+}
+
+- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair bird:(CCSprite *)bird grassGoal:(CCNode *)grassGoal {
+    [grassGoal removeFromParent];
+    points++;
+    CCLOG(@"Points ++.");
+    _scoreLabel.string = [NSString stringWithFormat:@"%d", points];
     return TRUE;
 }
 
