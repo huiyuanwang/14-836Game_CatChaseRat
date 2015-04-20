@@ -68,6 +68,10 @@
 		96EFD5A71AE5892A00A3DFED /* PlayScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EFD5A61AE5892A00A3DFED /* PlayScene.m */; };
 		96EFD5AB1AE58D3E00A3DFED /* Bird.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EFD5AA1AE58D3E00A3DFED /* Bird.m */; };
 		96EFD5AE1AE595B700A3DFED /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EFD5AD1AE595B700A3DFED /* Dog.m */; };
+		96EFD5B31AE59C4F00A3DFED /* Grass.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EFD5B21AE59C4F00A3DFED /* Grass.m */; };
+		96EFD5B61AE59C6800A3DFED /* Pipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EFD5B51AE59C6800A3DFED /* Pipe.m */; };
+		96EFD5B91AE59C8000A3DFED /* GrassGoal.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EFD5B81AE59C8000A3DFED /* GrassGoal.m */; };
+		96EFD5BC1AE59C9500A3DFED /* PipeGoal.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EFD5BB1AE59C9500A3DFED /* PipeGoal.m */; };
 		B71F5911188484E7003F4D28 /* iPad-old.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5907188484E7003F4D28 /* iPad-old.png */; };
 		B71F5912188484E7003F4D28 /* iPad-old@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5908188484E7003F4D28 /* iPad-old@2x.png */; };
 		B71F5913188484E7003F4D28 /* iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5909188484E7003F4D28 /* iPad.png */; };
@@ -188,6 +192,14 @@
 		96EFD5AA1AE58D3E00A3DFED /* Bird.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bird.m; sourceTree = "<group>"; };
 		96EFD5AC1AE595AC00A3DFED /* Dog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Dog.h; sourceTree = "<group>"; };
 		96EFD5AD1AE595B700A3DFED /* Dog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dog.m; sourceTree = "<group>"; };
+		96EFD5B11AE59C4500A3DFED /* Grass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Grass.h; sourceTree = "<group>"; };
+		96EFD5B21AE59C4F00A3DFED /* Grass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Grass.m; sourceTree = "<group>"; };
+		96EFD5B41AE59C5D00A3DFED /* Pipe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pipe.h; sourceTree = "<group>"; };
+		96EFD5B51AE59C6800A3DFED /* Pipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pipe.m; sourceTree = "<group>"; };
+		96EFD5B71AE59C7300A3DFED /* GrassGoal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GrassGoal.h; sourceTree = "<group>"; };
+		96EFD5B81AE59C8000A3DFED /* GrassGoal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrassGoal.m; sourceTree = "<group>"; };
+		96EFD5BA1AE59C8900A3DFED /* PipeGoal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PipeGoal.h; sourceTree = "<group>"; };
+		96EFD5BB1AE59C9500A3DFED /* PipeGoal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PipeGoal.m; sourceTree = "<group>"; };
 		B71F5907188484E7003F4D28 /* iPad-old.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad-old.png"; path = "Icons/iPad-old.png"; sourceTree = "<group>"; };
 		B71F5908188484E7003F4D28 /* iPad-old@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad-old@2x.png"; path = "Icons/iPad-old@2x.png"; sourceTree = "<group>"; };
 		B71F5909188484E7003F4D28 /* iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iPad.png; path = Icons/iPad.png; sourceTree = "<group>"; };
@@ -474,12 +486,36 @@
 			name = Characters;
 			sourceTree = "<group>";
 		};
+		96EFD5AF1AE59C1000A3DFED /* Goals */ = {
+			isa = PBXGroup;
+			children = (
+				96EFD5B71AE59C7300A3DFED /* GrassGoal.h */,
+				96EFD5B81AE59C8000A3DFED /* GrassGoal.m */,
+				96EFD5BA1AE59C8900A3DFED /* PipeGoal.h */,
+				96EFD5BB1AE59C9500A3DFED /* PipeGoal.m */,
+			);
+			name = Goals;
+			sourceTree = "<group>";
+		};
+		96EFD5B01AE59C2000A3DFED /* Obstacles */ = {
+			isa = PBXGroup;
+			children = (
+				96EFD5B11AE59C4500A3DFED /* Grass.h */,
+				96EFD5B21AE59C4F00A3DFED /* Grass.m */,
+				96EFD5B41AE59C5D00A3DFED /* Pipe.h */,
+				96EFD5B51AE59C6800A3DFED /* Pipe.m */,
+			);
+			name = Obstacles;
+			sourceTree = "<group>";
+		};
 		B737893C1807616C0076A88C /* Source */ = {
 			isa = PBXGroup;
 			children = (
 				7A40362019DDEF0D007B6E8F /* Platforms */,
 				96EFD59A1AE4C69000A3DFED /* Scenes */,
 				96EFD5A81AE58D1600A3DFED /* Characters */,
+				96EFD5B01AE59C2000A3DFED /* Obstacles */,
+				96EFD5AF1AE59C1000A3DFED /* Goals */,
 				D352B48019EC608A00829775 /* MetalShaders */,
 			);
 			name = Source;
@@ -857,10 +893,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96EFD5B31AE59C4F00A3DFED /* Grass.m in Sources */,
 				96EFD5A11AE4C6E000A3DFED /* OverScene.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 				96EFD5AE1AE595B700A3DFED /* Dog.m in Sources */,
 				7A046D8C19E8A20E004C4763 /* MainScene.m in Sources */,
+				96EFD5B91AE59C8000A3DFED /* GrassGoal.m in Sources */,
+				96EFD5BC1AE59C9500A3DFED /* PipeGoal.m in Sources */,
+				96EFD5B61AE59C6800A3DFED /* Pipe.m in Sources */,
 				96EFD5AB1AE58D3E00A3DFED /* Bird.m in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
 				96EFD5A71AE5892A00A3DFED /* PlayScene.m in Sources */,

@@ -1,5 +1,7 @@
 
 #import "MainScene.h"
+#import "Grass.h"
+#import "Pipe.h"
 
 static const CGFloat scrollSpeed = 80.f;
 
@@ -8,6 +10,11 @@ static const CGFloat scrollSpeed = 80.f;
     CCNode *_ground1;
     CCNode *_ground2;
     NSArray *_grounds;
+    
+    NSMutableArray *_grassObstacles;
+    NSMutableArray *_pipeObstacles;
+    float timeSinceGrass;
+    float timeSincePipe;
 }
 
 - (void)didLoadFromCCB {
@@ -22,8 +29,50 @@ static const CGFloat scrollSpeed = 80.f;
     // set this class as delegate
     _physicsNodes.collisionDelegate = self;
     
+    _grassObstacles = [NSMutableArray array];
+    _pipeObstacles = [NSMutableArray array];
+    
+    // Add grass obstable for bird character
+    CCLOG(@"Grass obstacle is ready to load in initialize.");
+    [self addGrassObstacle];
+    // Set the timer to catch when to add a new grass obstable
+    timeSinceGrass = 0.0f;
+    
+    // Add grass obstable for bird character
+    CCLOG(@"Pipe obstacle is ready to load in initialize.");
+    [self addPipeObstacle];
+    // Set the timer to catch when to add a new grass obstable
+    timeSincePipe = 0.0f;
+    
     [super initialize];
 }
+
+- (void)addGrassObstacle {
+    CCLOG(@"Grass obstacle is ready to load in addGrassObstacle.");
+    Grass *_grassObstacle = (Grass *)[CCBReader load:@"Grass"];
+    CCLOG(@"Grass obstacle is loaded.");
+    CGPoint screenPosition = [self convertToWorldSpace:ccp(380, 0)];
+    CGPoint worldPosition = [_physicsNodes convertToNodeSpace:screenPosition];
+    _grassObstacle.position = worldPosition;
+    [_grassObstacle setupRandomPosition];
+    _grassObstacle.zOrder = DrawingOrderPipes;
+    [_physicsNodes addChild:_grassObstacle];
+    [_grassObstacles addObject:_grassObstacle];
+}
+
+- (void)addPipeObstacle {
+    CCLOG(@"Pipe obstacle is ready to load in addPipeObstacle.");
+    Pipe *_pipeObstacle = (Pipe *)[CCBReader load:@"Pipe"];
+    CCLOG(@"Pipe obstacle is loaded.");
+    CGPoint screenPosition = [self convertToWorldSpace:ccp(290, 0)];
+    CGPoint worldPosition = [_physicsNodes convertToNodeSpace:screenPosition];
+    _pipeObstacle.position = worldPosition;
+    [_pipeObstacle setupRandomPosition];
+    _pipeObstacle.zOrder = DrawingOrderPipes;
+    [_physicsNodes addChild:_pipeObstacle];
+    [_pipeObstacles addObject:_pipeObstacle];
+}
+
 
 - (void)update:(CCTime)delta {
     _bird.position = ccp(_bird.position.x + delta * scrollSpeed, _bird.position.y);
@@ -41,6 +90,59 @@ static const CGFloat scrollSpeed = 80.f;
             ground.position = ccp(ground.position.x + 2.6 * ground.contentSize.width, ground.position.y);
         }
     }
+    
+    NSMutableArray *offScreenObstacles = nil;
+    
+    for (CCNode *obstacle in _grassObstacles) {
+        CGPoint obstacleWorldPosition = [_physicsNodes convertToWorldSpace:obstacle.position];
+        CGPoint obstacleScreenPosition = [self convertToNodeSpace:obstacleWorldPosition];
+        if (obstacleScreenPosition.x < -obstacle.contentSize.width) {
+            if (!offScreenObstacles) {
+                offScreenObstacles = [NSMutableArray array];
+            }
+            [offScreenObstacles addObject:obstacle];
+        }
+    }
+    
+    for (CCNode *obstacleToRemove in offScreenObstacles) {
+        [obstacleToRemove removeFromParent];
+        [_grassObstacles removeObject:obstacleToRemove];
+    }
+    
+    for (CCNode *obstacle in _pipeObstacles) {
+        CGPoint obstacleWorldPosition = [_physicsNodes convertToWorldSpace:obstacle.position];
+        CGPoint obstacleScreenPosition = [self convertToNodeSpace:obstacleWorldPosition];
+        if (obstacleScreenPosition.x < -obstacle.contentSize.width) {
+            if (!offScreenObstacles) {
+                offScreenObstacles = [NSMutableArray array];
+            }
+            [offScreenObstacles addObject:obstacle];
+        }
+    }
+    
+    for (CCNode *obstacleToRemove in offScreenObstacles) {
+        [obstacleToRemove removeFromParent];
+        [_pipeObstacles removeObject:obstacleToRemove];
+    }
+    
+    // Increment the time since the last obstacle was added
+    timeSinceGrass += delta; // delta is approximately 1/60th of a second
+    timeSincePipe += delta;
+    
+    // Check to see if two seconds have passed
+    if (timeSinceGrass > 5.0f)
+    {
+        // Add a new grass obstacle
+        [self addGrassObstacle];
+        // Then reset the timer.
+        timeSinceGrass = 0.0f;
+    }
+    if (timeSincePipe > 6.0f)
+    {
+        [self addPipeObstacle];
+        timeSincePipe = 0.0f;
+    }
+    
 }
 
 @end

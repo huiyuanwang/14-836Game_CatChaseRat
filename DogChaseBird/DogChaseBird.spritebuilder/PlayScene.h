@@ -21,8 +21,6 @@ typedef NS_ENUM(NSInteger, DrawingOrder) {
     Bird *_bird;
     Dog *_dog;
     CCPhysicsNode *_physicsNodes;
-    //float timeSinceGrass;
-    //float timeSincePipe;
 }
 
 -(void) initialize;
