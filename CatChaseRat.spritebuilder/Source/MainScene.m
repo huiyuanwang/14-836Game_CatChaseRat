@@ -161,7 +161,6 @@ int points;
             [super update:delta];
         }
         @catch(NSException* ex) {
-            
         }
     }
 }

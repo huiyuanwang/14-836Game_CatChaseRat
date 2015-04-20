@@ -23,6 +23,10 @@ typedef NS_ENUM(NSInteger, DrawingOrder) {
     CCPhysicsNode *_physicsNode;
     float timeSinceGrass;
     float timeSincePipe;
+    
+    CCNode *_contentNode;
+    CCNode *_birdButton;
+    CCNode *_dogButton;
 }
 
 -(void) initialize;

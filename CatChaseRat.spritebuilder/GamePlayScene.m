@@ -8,11 +8,7 @@
 
 #import "GamePlayScene.h"
 
-@implementation GamePlayScene {
-    CCNode *_contentNode;
-    CCNode *_birdButton;
-    CCNode *_dogButton;
-}
+@implementation GamePlayScene
 
 - (void)initialize
 {
