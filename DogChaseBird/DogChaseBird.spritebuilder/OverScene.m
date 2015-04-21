@@ -8,7 +8,13 @@
 
 #import "OverScene.h"
 
-@implementation OverScene
+@implementation OverScene {
+    CCLabelTTF *_finalScoreLabel;
+}
+
+- (void)didLoadFromCCB {
+    _finalScoreLabel.string = [NSString stringWithFormat:@"%d", points];
+}
 
 - (void)restart {
     CCScene *gameplayScene = [CCBReader loadAsScene:@"MainScene"];

@@ -10,4 +10,6 @@
 
 @interface OverScene : CCNode
 
+extern int points;
+
 @end

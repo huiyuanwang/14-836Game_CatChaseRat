@@ -180,10 +180,9 @@ int points;
 
 - (void)gameOver {
     if (!_gameOver) {
-        CCLOG(@"The game is over. Because the bird is crashed.");
-        _gameOver = TRUE;
-        CCScene *gameoverScene = [CCBReader loadAsScene:@"OverScene"];
-        [[CCDirector sharedDirector] replaceScene:gameoverScene];
+        //_gameOver = TRUE;
+        //CCScene *gameoverScene = [CCBReader loadAsScene:@"OverScene"];
+        //[[CCDirector sharedDirector] replaceScene:gameoverScene];
     }
 }
 
@@ -219,5 +218,16 @@ int points;
     return TRUE;
 }
 
+- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair*)pair dog:(CCSprite*)dog pipeLevel:(CCNode *)pipeLevel {
+    [self gameOver];
+    CCLOG(@"The game is over. Because the dog is crashed.");
+    return TRUE;
+}
+
+- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair*)pair bird:(CCSprite*)bird grassLevel:(CCNode*)grassLevel {
+    [self gameOver];
+    CCLOG(@"The game is over. Because the bird is crashed.");
+    return TRUE;
+}
 
 @end
