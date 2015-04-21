@@ -20,7 +20,7 @@ static const CGFloat miniXPosition = 100.f;
 static const CGFloat maxiXPosition = 250.f;
 
 - (void)didLoadFromCCB {
-    _grass.physicsBody.collisionType = @"grasslevel";
+    _grass.physicsBody.collisionType = @"grassLevel";
     _grass.physicsBody.sensor = YES;
 }
 

@@ -1,9 +1,17 @@
+//
+//  MainScene.m
+//  DogChaseBird
+//
+//  Created by Huiyuan Wang on 4/20/15.
+//  Copyright (c) 2015 Apportable. All rights reserved.
+//
 
 #import "MainScene.h"
 #import "Grass.h"
 #import "Pipe.h"
 
 static const CGFloat scrollSpeed = 90.f;
+int points;
 
 @implementation MainScene {
     // two grounds to make them continuously loop
@@ -23,6 +31,8 @@ static const CGFloat scrollSpeed = 90.f;
     CCNode *_buttonNodes;
     CCNode *_dogButton;
     CCNode *_birdButton;
+    
+    CCLabelTTF *_scoreLabel;
 }
 
 - (void)didLoadFromCCB {
@@ -159,11 +169,55 @@ static const CGFloat scrollSpeed = 90.f;
     if (!_gameOver) {
         if (CGRectContainsPoint([_dogButton boundingBox], touchLocation) && !_dogOneJump) {
             [_dog jump];
+            _dogOneJump = TRUE;
         }
         if (CGRectContainsPoint([_birdButton boundingBox], touchLocation) && !_birdOneJump) {
             [_bird jump];
+            _birdOneJump = TRUE;
         }
     }
 }
+
+- (void)gameOver {
+    if (!_gameOver) {
+        CCLOG(@"The game is over. Because the bird is crashed.");
+        _gameOver = TRUE;
+        CCScene *gameoverScene = [CCBReader loadAsScene:@"OverScene"];
+        [[CCDirector sharedDirector] replaceScene:gameoverScene];
+    }
+}
+
+- (void)dogOneJump {
+    _dogOneJump = FALSE;
+}
+
+- (void)birdOneJump {
+    _birdOneJump = FALSE;
+}
+
+- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair*)pair dog:(CCSprite*)dog ground:(CCNode*)ground {
+    [self dogOneJump];
+    return TRUE;
+}
+
+- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair*)pair bird:(CCSprite*)bird ground:(CCNode*)ground {
+    [self birdOneJump];
+    return TRUE;
+}
+
+- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair dog:(CCSprite *)dog pipeGoal:(CCNode *)pipeGoal {
+    [pipeGoal removeFromParent];
+    points++;
+    _scoreLabel.string = [NSString stringWithFormat:@"%d", points];
+    return TRUE;
+}
+
+- (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair bird:(CCSprite *)bird grassGoal:(CCNode *)grassGoal {
+    [grassGoal removeFromParent];
+    points++;
+    _scoreLabel.string = [NSString stringWithFormat:@"%d", points];
+    return TRUE;
+}
+
 
 @end

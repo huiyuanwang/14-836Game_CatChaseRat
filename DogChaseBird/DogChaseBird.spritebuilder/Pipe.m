@@ -20,7 +20,7 @@ static const CGFloat miniXPosition = 50.f;
 static const CGFloat maxiXPosition = 100.f;
 
 - (void)didLoadFromCCB {
-    _pipe.physicsBody.collisionType = @"pipelevel";
+    _pipe.physicsBody.collisionType = @"pipeLevel";
     _pipe.physicsBody.sensor = YES;
 }
 
