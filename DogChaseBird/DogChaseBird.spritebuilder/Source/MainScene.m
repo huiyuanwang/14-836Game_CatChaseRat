@@ -17,7 +17,12 @@ static const CGFloat scrollSpeed = 90.f;
     float timeSincePipe;
     
     BOOL _gameOver;
-    BOOL _oneJump;
+    BOOL _dogOneJump;
+    BOOL _birdOneJump;
+    
+    CCNode *_buttonNodes;
+    CCNode *_dogButton;
+    CCNode *_birdButton;
 }
 
 - (void)didLoadFromCCB {
@@ -149,9 +154,15 @@ static const CGFloat scrollSpeed = 90.f;
 }
 
 - (void)touchBegan:(CCTouch *)touch withEvent:(CCTouchEvent *)event {
-    if (!_gameOver && !_oneJump) {
-        [_bird jump];
-        [_dog jump];
+    // Catch the touch position
+    CGPoint touchLocation = [touch locationInNode:_buttonNodes];
+    if (!_gameOver) {
+        if (CGRectContainsPoint([_dogButton boundingBox], touchLocation) && !_dogOneJump) {
+            [_dog jump];
+        }
+        if (CGRectContainsPoint([_birdButton boundingBox], touchLocation) && !_birdOneJump) {
+            [_bird jump];
+        }
     }
 }
 
