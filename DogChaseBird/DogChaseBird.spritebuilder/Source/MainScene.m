@@ -3,7 +3,7 @@
 #import "Grass.h"
 #import "Pipe.h"
 
-static const CGFloat scrollSpeed = 80.f;
+static const CGFloat scrollSpeed = 90.f;
 
 @implementation MainScene {
     // two grounds to make them continuously loop
@@ -15,6 +15,9 @@ static const CGFloat scrollSpeed = 80.f;
     NSMutableArray *_pipeObstacles;
     float timeSinceGrass;
     float timeSincePipe;
+    
+    BOOL _gameOver;
+    BOOL _oneJump;
 }
 
 - (void)didLoadFromCCB {
@@ -143,6 +146,13 @@ static const CGFloat scrollSpeed = 80.f;
         timeSincePipe = 0.0f;
     }
     
+}
+
+- (void)touchBegan:(CCTouch *)touch withEvent:(CCTouchEvent *)event {
+    if (!_gameOver && !_oneJump) {
+        [_bird jump];
+        [_dog jump];
+    }
 }
 
 @end

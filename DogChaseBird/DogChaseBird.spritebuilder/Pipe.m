@@ -17,7 +17,7 @@
 static const CGFloat YPosition = 0.f;
 // We want the x position to be set in a random range
 static const CGFloat miniXPosition = 50.f;
-static const CGFloat maxiXPosition = 150.f;
+static const CGFloat maxiXPosition = 100.f;
 
 - (void)didLoadFromCCB {
     _pipe.physicsBody.collisionType = @"pipelevel";
