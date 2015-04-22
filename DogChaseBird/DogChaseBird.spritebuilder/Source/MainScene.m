@@ -74,6 +74,8 @@ int points;
     [audio preloadEffect:dogBombSound];
     [audio preloadEffect:birdBombSound];
     
+    points = 0;
+    
     [super initialize];
 }
 
@@ -160,14 +162,14 @@ int points;
     timeSincePipe += delta;
     
     // Check to see if two seconds have passed
-    if (timeSinceGrass > 5.0f)
+    if (timeSinceGrass > 3.0f)
     {
         // Add a new grass obstacle
         [self addGrassObstacle];
         // Then reset the timer.
         timeSinceGrass = 0.0f;
     }
-    if (timeSincePipe > 6.0f)
+    if (timeSincePipe > 5.0f)
     {
         [self addPipeObstacle];
         timeSincePipe = 0.0f;
@@ -194,9 +196,9 @@ int points;
 
 - (void)gameOver {
     if (!_gameOver) {
-        //_gameOver = TRUE;
-        //CCScene *gameoverScene = [CCBReader loadAsScene:@"OverScene"];
-        //[[CCDirector sharedDirector] replaceScene:gameoverScene];
+        _gameOver = TRUE;
+        CCScene *gameoverScene = [CCBReader loadAsScene:@"OverScene"];
+        [[CCDirector sharedDirector] replaceScene:gameoverScene];
     }
 }
 
