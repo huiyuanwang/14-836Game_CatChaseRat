@@ -10,7 +10,12 @@
 #import "Grass.h"
 #import "Pipe.h"
 
-static const CGFloat scrollSpeed = 90.f;
+static NSString *dogJumpSound = @"DogJump.mp3";
+static NSString *birdJumpSound = @"BirdJump.mp3";
+static NSString *dogBombSound = @"DogBomb.mp3";
+static NSString *birdBombSound = @"BirdBomb.mp3";
+
+static const CGFloat scrollSpeed = 100.f;
 int points;
 
 @implementation MainScene {
@@ -61,6 +66,13 @@ int points;
     [self addPipeObstacle];
     // Set the timer to catch when to add a new grass obstable
     timeSincePipe = 0.0f;
+    
+    // Preload sounds
+    OALSimpleAudio *audio = [OALSimpleAudio sharedInstance];
+    [audio preloadEffect:dogJumpSound];
+    [audio preloadEffect:birdJumpSound];
+    [audio preloadEffect:dogBombSound];
+    [audio preloadEffect:birdBombSound];
     
     [super initialize];
 }
@@ -168,10 +180,12 @@ int points;
     CGPoint touchLocation = [touch locationInNode:_buttonNodes];
     if (!_gameOver) {
         if (CGRectContainsPoint([_dogButton boundingBox], touchLocation) && !_dogOneJump) {
+            [[OALSimpleAudio sharedInstance] playEffect:dogJumpSound];
             [_dog jump];
             _dogOneJump = TRUE;
         }
         if (CGRectContainsPoint([_birdButton boundingBox], touchLocation) && !_birdOneJump) {
+            [[OALSimpleAudio sharedInstance] playEffect:birdJumpSound];
             [_bird jump];
             _birdOneJump = TRUE;
         }
@@ -219,12 +233,14 @@ int points;
 }
 
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair*)pair dog:(CCSprite*)dog pipeLevel:(CCNode *)pipeLevel {
+    [[OALSimpleAudio sharedInstance] playEffect:dogBombSound];
     [self gameOver];
     CCLOG(@"The game is over. Because the dog is crashed.");
     return TRUE;
 }
 
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair*)pair bird:(CCSprite*)bird grassLevel:(CCNode*)grassLevel {
+    [[OALSimpleAudio sharedInstance] playEffect:birdBombSound];
     [self gameOver];
     CCLOG(@"The game is over. Because the bird is crashed.");
     return TRUE;

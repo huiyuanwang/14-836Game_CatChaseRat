@@ -72,6 +72,10 @@
 		96EFD5B61AE59C6800A3DFED /* Pipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EFD5B51AE59C6800A3DFED /* Pipe.m */; };
 		96EFD5B91AE59C8000A3DFED /* GrassGoal.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EFD5B81AE59C8000A3DFED /* GrassGoal.m */; };
 		96EFD5BC1AE59C9500A3DFED /* PipeGoal.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EFD5BB1AE59C9500A3DFED /* PipeGoal.m */; };
+		96EFD5D01AE6F83000A3DFED /* DogJump.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 96EFD5CF1AE6F83000A3DFED /* DogJump.mp3 */; };
+		96EFD5D41AE7182800A3DFED /* BirdJump.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 96EFD5D31AE7182800A3DFED /* BirdJump.mp3 */; };
+		96EFD5D71AE7188D00A3DFED /* BirdBomb.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 96EFD5D51AE7188D00A3DFED /* BirdBomb.mp3 */; };
+		96EFD5D81AE7188D00A3DFED /* DogBomb.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 96EFD5D61AE7188D00A3DFED /* DogBomb.mp3 */; };
 		B71F5911188484E7003F4D28 /* iPad-old.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5907188484E7003F4D28 /* iPad-old.png */; };
 		B71F5912188484E7003F4D28 /* iPad-old@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5908188484E7003F4D28 /* iPad-old@2x.png */; };
 		B71F5913188484E7003F4D28 /* iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5909188484E7003F4D28 /* iPad.png */; };
@@ -200,6 +204,10 @@
 		96EFD5B81AE59C8000A3DFED /* GrassGoal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GrassGoal.m; sourceTree = "<group>"; };
 		96EFD5BA1AE59C8900A3DFED /* PipeGoal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PipeGoal.h; sourceTree = "<group>"; };
 		96EFD5BB1AE59C9500A3DFED /* PipeGoal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PipeGoal.m; sourceTree = "<group>"; };
+		96EFD5CF1AE6F83000A3DFED /* DogJump.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = DogJump.mp3; path = ../../../../../Downloads/DogJump.mp3; sourceTree = "<group>"; };
+		96EFD5D31AE7182800A3DFED /* BirdJump.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = BirdJump.mp3; path = ../../../../../Downloads/BirdJump.mp3; sourceTree = "<group>"; };
+		96EFD5D51AE7188D00A3DFED /* BirdBomb.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = BirdBomb.mp3; path = ../../../../../Downloads/BirdBomb.mp3; sourceTree = "<group>"; };
+		96EFD5D61AE7188D00A3DFED /* DogBomb.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = DogBomb.mp3; path = ../../../../../Downloads/DogBomb.mp3; sourceTree = "<group>"; };
 		B71F5907188484E7003F4D28 /* iPad-old.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad-old.png"; path = "Icons/iPad-old.png"; sourceTree = "<group>"; };
 		B71F5908188484E7003F4D28 /* iPad-old@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad-old@2x.png"; path = "Icons/iPad-old@2x.png"; sourceTree = "<group>"; };
 		B71F5909188484E7003F4D28 /* iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iPad.png; path = Icons/iPad.png; sourceTree = "<group>"; };
@@ -595,6 +603,10 @@
 		B77F1B4617B978D7009739AE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				96EFD5D51AE7188D00A3DFED /* BirdBomb.mp3 */,
+				96EFD5D61AE7188D00A3DFED /* DogBomb.mp3 */,
+				96EFD5D31AE7182800A3DFED /* BirdJump.mp3 */,
+				96EFD5CF1AE6F83000A3DFED /* DogJump.mp3 */,
 				7A40366119DDF8C2007B6E8F /* Platforms */,
 				5B12100D197483EE004C1E1D /* res */,
 				B73789911807667A0076A88C /* Icons */,
@@ -689,6 +701,7 @@
 						CreatedOnToolsVersion = 6.0.1;
 					};
 					B77F1B2D17B978D7009739AE = {
+						DevelopmentTeam = 9VUC3R8D65;
 						SystemCapabilities = {
 							com.apple.GameCenter = {
 								enabled = 0;
@@ -807,6 +820,7 @@
 				B71F5919188484E7003F4D28 /* Settings.png in Resources */,
 				B7378978180762440076A88C /* Default@2x.png in Resources */,
 				B71F5914188484E7003F4D28 /* iPad@2x.png in Resources */,
+				96EFD5D71AE7188D00A3DFED /* BirdBomb.mp3 in Resources */,
 				B71F5913188484E7003F4D28 /* iPad.png in Resources */,
 				B71F5912188484E7003F4D28 /* iPad-old@2x.png in Resources */,
 				B71F5916188484E7003F4D28 /* iPhone-old@2x.png in Resources */,
@@ -817,8 +831,11 @@
 				B71F5917188484E7003F4D28 /* iPhone.png in Resources */,
 				B7378975180762440076A88C /* Default-568h@2x.png in Resources */,
 				B71F5918188484E7003F4D28 /* iPhone@2x.png in Resources */,
+				96EFD5D41AE7182800A3DFED /* BirdJump.mp3 in Resources */,
 				B7378977180762440076A88C /* Default.png in Resources */,
 				B71F5911188484E7003F4D28 /* iPad-old.png in Resources */,
+				96EFD5D81AE7188D00A3DFED /* DogBomb.mp3 in Resources */,
+				96EFD5D01AE6F83000A3DFED /* DogJump.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
