@@ -24,13 +24,30 @@
     [[CCDirector sharedDirector] replaceScene:gameplayScene];
 }
 
+- (UIImage *) screenShot: (CCNode *)sNode {
+    [CCDirector sharedDirector].nextDeltaTimeZero = YES;
+    
+    CGSize winSize = [[CCDirector sharedDirector] viewSize];
+    CCRenderTexture *renTxture = [CCRenderTexture renderTextureWithWidth:winSize.width height:winSize.height];
+    
+    [renTxture begin];
+    [sNode visit];
+    [renTxture end];
+    
+    return [renTxture getUIImage];
+}
+
 - (void)shareToFacebook {
-    UIImage *img = [UIImage imageNamed:@"spacemonkey.png"];
+    CCLOG(@"Begin to share to Facebook.");
+    CCScene *runScene = [[CCDirector sharedDirector] runningScene];
+    CCNode *node = [runScene.children objectAtIndex:0];
+    UIImage *img = [self screenShot:node];
+    //UIImage *img = [UIImage imageNamed:@"dogchasebird.png"];
     
     FBSDKSharePhoto *screen = [[FBSDKSharePhoto alloc] init];
     screen.image = img;
     screen.userGenerated = YES;
-    [screen setImageURL:[NSURL URLWithString:@"http://spacemonkey.kailiangchen.com"]];
+    //[screen setImageURL:[NSURL URLWithString:@""]];
                          
     FBSDKSharePhotoContent *content = [[FBSDKSharePhotoContent alloc] init];
     content.photos = @[screen];

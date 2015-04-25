@@ -65,6 +65,8 @@
 		927F61BB196C771E000F43EF /* iPad-old.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5907188484E7003F4D28 /* iPad-old.png */; };
 		962CB6A81AE97DF2002DCAD1 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 962CB6A71AE97DF2002DCAD1 /* FBSDKShareKit.framework */; };
 		962CB6AA1AE97E2D002DCAD1 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 962CB6A91AE97E2D002DCAD1 /* FBSDKCoreKit.framework */; };
+		962CB6C61AEBFB50002DCAD1 /* dogchasebird.png in Resources */ = {isa = PBXBuildFile; fileRef = 962CB6C51AEBFB50002DCAD1 /* dogchasebird.png */; };
+		962CB6CA1AEBFB58002DCAD1 /* gameplay.png in Resources */ = {isa = PBXBuildFile; fileRef = 962CB6C91AEBFB58002DCAD1 /* gameplay.png */; };
 		96EFD5A11AE4C6E000A3DFED /* OverScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EFD5A01AE4C6E000A3DFED /* OverScene.m */; };
 		96EFD5A41AE4C70000A3DFED /* StartScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EFD5A31AE4C70000A3DFED /* StartScene.m */; };
 		96EFD5A71AE5892A00A3DFED /* PlayScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EFD5A61AE5892A00A3DFED /* PlayScene.m */; };
@@ -190,6 +192,8 @@
 		927F61BF196C771E000F43EF /* DogChaseBird Android.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DogChaseBird Android.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		962CB6A71AE97DF2002DCAD1 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../../Documents/FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
 		962CB6A91AE97E2D002DCAD1 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		962CB6C51AEBFB50002DCAD1 /* dogchasebird.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dogchasebird.png; path = ../../../../../Desktop/dogchasebird.png; sourceTree = "<group>"; };
+		962CB6C91AEBFB58002DCAD1 /* gameplay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gameplay.png; path = ../../../../../Desktop/gameplay.png; sourceTree = "<group>"; };
 		96EFD59F1AE4C6CB00A3DFED /* OverScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OverScene.h; sourceTree = "<group>"; };
 		96EFD5A01AE4C6E000A3DFED /* OverScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverScene.m; sourceTree = "<group>"; };
 		96EFD5A21AE4C6F200A3DFED /* StartScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StartScene.h; sourceTree = "<group>"; };
@@ -615,6 +619,8 @@
 				96EFD5D61AE7188D00A3DFED /* DogBomb.mp3 */,
 				96EFD5D31AE7182800A3DFED /* BirdJump.mp3 */,
 				96EFD5CF1AE6F83000A3DFED /* DogJump.mp3 */,
+				962CB6C51AEBFB50002DCAD1 /* dogchasebird.png */,
+				962CB6C91AEBFB58002DCAD1 /* gameplay.png */,
 				7A40366119DDF8C2007B6E8F /* Platforms */,
 				5B12100D197483EE004C1E1D /* res */,
 				B73789911807667A0076A88C /* Icons */,
@@ -827,10 +833,12 @@
 			files = (
 				B71F5919188484E7003F4D28 /* Settings.png in Resources */,
 				B7378978180762440076A88C /* Default@2x.png in Resources */,
+				962CB6CA1AEBFB58002DCAD1 /* gameplay.png in Resources */,
 				B71F5914188484E7003F4D28 /* iPad@2x.png in Resources */,
 				96EFD5D71AE7188D00A3DFED /* BirdBomb.mp3 in Resources */,
 				B71F5913188484E7003F4D28 /* iPad.png in Resources */,
 				B71F5912188484E7003F4D28 /* iPad-old@2x.png in Resources */,
+				962CB6C61AEBFB50002DCAD1 /* dogchasebird.png in Resources */,
 				B71F5916188484E7003F4D28 /* iPhone-old@2x.png in Resources */,
 				B737893B180761570076A88C /* Published-iOS in Resources */,
 				B71F591A188484E7003F4D28 /* Settings@2x.png in Resources */,
