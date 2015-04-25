@@ -16,6 +16,7 @@
 }
 
 - (void)didLoadFromCCB {
+    runTime += 1;
     _finalScoreLabel.string = [NSString stringWithFormat:@"%d", points];
 }
 

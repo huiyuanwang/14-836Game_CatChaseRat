@@ -15,8 +15,8 @@ static NSString *birdJumpSound = @"BirdJump.mp3";
 static NSString *dogBombSound = @"DogBomb.mp3";
 static NSString *birdBombSound = @"BirdBomb.mp3";
 
-static const CGFloat scrollSpeed = 100.f;
 int points;
+int runTime;
 
 @implementation MainScene {
     // two grounds to make them continuously loop
@@ -38,6 +38,13 @@ int points;
     CCNode *_birdButton;
     
     CCLabelTTF *_scoreLabel;
+    CCLabelTTF *_tipLabel;
+    CCLabelTTF *_levelLabel;
+    
+    CGFloat scrollSpeed;
+    CGFloat interval;
+    int temp;
+    int level;
 }
 
 - (void)didLoadFromCCB {
@@ -75,6 +82,15 @@ int points;
     [audio preloadEffect:birdBombSound];
     
     points = 0;
+    scrollSpeed = 100.0f;
+    interval = 5.0f;
+    temp = 0;
+    level = 1;
+    
+    _levelLabel.string = [NSString stringWithFormat:@"  Level: %d", level];
+    
+    if (runTime > 0)
+        _tipLabel.string = [NSString stringWithFormat:@"%s", ""];
     
     [super initialize];
 }
@@ -162,19 +178,30 @@ int points;
     timeSincePipe += delta;
     
     // Check to see if two seconds have passed
-    if (timeSinceGrass > 3.0f)
+    if (timeSinceGrass > interval)
     {
         // Add a new grass obstacle
         [self addGrassObstacle];
         // Then reset the timer.
         timeSinceGrass = 0.0f;
     }
-    if (timeSincePipe > 5.0f)
+    if (timeSincePipe > interval)
     {
         [self addPipeObstacle];
         timeSincePipe = 0.0f;
+        _levelLabel.string = [NSString stringWithFormat:@"%s", ""];
+        if (runTime == 0) {
+            _tipLabel.string = [NSString stringWithFormat:@"%s", ""];
+            runTime += 1;
+        }
     }
-    
+    if (temp > 16 && scrollSpeed <= 150.0f) {
+        level ++;
+        _levelLabel.string = [NSString stringWithFormat:@"Good Job!!\n The speed is up.\n  Level: %d", level];
+        scrollSpeed += 20.0f;
+        interval -= 1.0f;
+        temp = 0;
+    }
 }
 
 - (void)touchBegan:(CCTouch *)touch withEvent:(CCTouchEvent *)event {
@@ -223,13 +250,15 @@ int points;
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair dog:(CCSprite *)dog pipeGoal:(CCNode *)pipeGoal {
     [pipeGoal removeFromParent];
     points++;
+    temp ++;
     _scoreLabel.string = [NSString stringWithFormat:@"%d", points];
     return TRUE;
 }
 
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair bird:(CCSprite *)bird grassGoal:(CCNode *)grassGoal {
     [grassGoal removeFromParent];
-    points++;
+    points ++;
+    temp ++;
     _scoreLabel.string = [NSString stringWithFormat:@"%d", points];
     return TRUE;
 }

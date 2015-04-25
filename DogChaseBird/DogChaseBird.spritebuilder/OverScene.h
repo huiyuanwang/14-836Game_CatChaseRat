@@ -11,5 +11,6 @@
 @interface OverScene : CCNode
 
 extern int points;
+extern int runTime;
 
 @end

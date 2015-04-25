@@ -10,4 +10,6 @@
 
 @interface StartScene : CCNode
 
+extern int runTime;
+
 @end
