@@ -63,14 +63,14 @@ int runTime;
     _pipeObstacles = [NSMutableArray array];
     
     // Add grass obstable for bird character
-    CCLOG(@"Grass obstacle is ready to load in initialize.");
-    [self addGrassObstacle];
+    //CCLOG(@"Grass obstacle is ready to load in initialize.");
+    //[self addGrassObstacle];
     // Set the timer to catch when to add a new grass obstable
     timeSinceGrass = 0.0f;
     
     // Add grass obstable for bird character
-    CCLOG(@"Pipe obstacle is ready to load in initialize.");
-    [self addPipeObstacle];
+    //CCLOG(@"Pipe obstacle is ready to load in initialize.");
+    //[self addPipeObstacle];
     // Set the timer to catch when to add a new grass obstable
     timeSincePipe = 0.0f;
     
