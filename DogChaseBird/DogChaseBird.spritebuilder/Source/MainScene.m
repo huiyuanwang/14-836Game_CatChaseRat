@@ -87,10 +87,12 @@ int runTime;
     temp = 0;
     level = 1;
     
-    _levelLabel.string = [NSString stringWithFormat:@"  Level: %d", level];
     
-    if (runTime > 0)
+    if (runTime > 0) {
         _tipLabel.string = [NSString stringWithFormat:@"%s", ""];
+        _levelLabel.string = [NSString stringWithFormat:@"  Level: %d", level];
+    } else
+        _levelLabel.string = [NSString stringWithFormat:@"%s", ""];
     
     [super initialize];
 }
@@ -178,7 +180,7 @@ int runTime;
     timeSincePipe += delta;
     
     // Check to see if two seconds have passed
-    if (timeSinceGrass > interval)
+    if (timeSinceGrass > (interval - 1.0f))
     {
         // Add a new grass obstacle
         [self addGrassObstacle];

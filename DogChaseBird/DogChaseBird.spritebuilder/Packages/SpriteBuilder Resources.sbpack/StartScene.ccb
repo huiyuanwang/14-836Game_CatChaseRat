@@ -505,8 +505,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>371.5</real>
-							<real>119</real>
+							<real>323.5</real>
+							<real>57</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -543,13 +543,7 @@
 						<string>Text</string>
 						<key>value</key>
 						<array>
-							<string>TIP:
-Dog button: 
-	Jump dog to skip pipe
-Bird button:
-	Jump bird to skip grass
-
-BY:
+							<string>BY:
  Huiyuan Wang</string>
 							<false/>
 						</array>
@@ -588,9 +582,9 @@ BY:
 						<string>Color3</string>
 						<key>value</key>
 						<array>
-							<real>1</real>
-							<real>0.0</real>
 							<real>0.50196081399917603</real>
+							<real>0.25098040699958801</real>
+							<real>0.0</real>
 							<real>1</real>
 						</array>
 					</dict>
