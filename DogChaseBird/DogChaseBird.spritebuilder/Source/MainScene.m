@@ -42,7 +42,9 @@ int runTime;
     CCLabelTTF *_levelLabel;
     
     CGFloat scrollSpeed;
-    CGFloat interval;
+    CGFloat grassInterval;
+    CGFloat pipeInterval;
+    int intervalLevel;
     int temp;
     int level;
 }
@@ -83,9 +85,11 @@ int runTime;
     
     points = 0;
     scrollSpeed = 100.0f;
-    interval = 5.0f;
+    grassInterval = 4.0f;
+    pipeInterval = 5.0f;
     temp = 0;
     level = 1;
+    intervalLevel = 1;
     
     
     if (runTime > 0) {
@@ -180,14 +184,14 @@ int runTime;
     timeSincePipe += delta;
     
     // Check to see if two seconds have passed
-    if (timeSinceGrass > (interval - 1.0f))
+    if (timeSinceGrass > grassInterval)
     {
         // Add a new grass obstacle
         [self addGrassObstacle];
         // Then reset the timer.
         timeSinceGrass = 0.0f;
     }
-    if (timeSincePipe > interval)
+    if (timeSincePipe > pipeInterval)
     {
         [self addPipeObstacle];
         timeSincePipe = 0.0f;
@@ -199,9 +203,13 @@ int runTime;
     }
     if (temp > 16 && scrollSpeed <= 150.0f) {
         level ++;
+        intervalLevel = level / 2;
+        if (intervalLevel == 3)
+            intervalLevel -= 1;
         _levelLabel.string = [NSString stringWithFormat:@"Good Job!!\n The speed is up.\n  Level: %d", level];
-        scrollSpeed += 20.0f;
-        interval -= 1.0f;
+        scrollSpeed += 10.0f;
+        grassInterval = 4.0f - intervalLevel;
+        pipeInterval = 5.0f - intervalLevel;
         temp = 0;
     }
 }
