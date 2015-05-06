@@ -84,7 +84,7 @@ int runTime;
     [audio preloadEffect:birdBombSound];
     
     points = 0;
-    scrollSpeed = 100.0f;
+    scrollSpeed = 110.0f;
     grassInterval = 4.0f;
     pipeInterval = 5.0f;
     temp = 0;
@@ -201,7 +201,7 @@ int runTime;
             runTime += 1;
         }
     }
-    if (temp > 16 && scrollSpeed <= 150.0f) {
+    if (temp > 8 && scrollSpeed <= 150.0f) {
         level ++;
         intervalLevel = level / 2;
         if (intervalLevel == 3)
